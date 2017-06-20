@@ -12,7 +12,6 @@
 	$result = pg_query($dbconn, $query);
 	if (!$result) {
 	  echo "Usuario no encontrado.<br>";
-	  exit;
 	}
 
 	while ($row = pg_fetch_row($result)) {
