@@ -10,7 +10,7 @@
 	$result = pg_query($dbconn, $queryusers);
 
 
-	$result = array('status' => "Error", 'msg' => $dbconn->insert_id;
+	$result = array('status' => "Error", 'msg' => $dbconn->insert_id);
 	echo json_encode($result);
 
 
