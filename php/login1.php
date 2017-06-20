@@ -1,6 +1,8 @@
 <?php
 
-	require 'conexion.php';
+	require 'conexion1.php';
+	echo "Hola";
+	/*
 
 	$contr = $_POST['password'];
 	$user = $_POST['usuario'];
@@ -30,4 +32,5 @@
 	}
 
 mysqli_close($enlace);
+*/
 ?>
