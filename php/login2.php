@@ -1,15 +1,15 @@
 <?php
 
 	require 'conexion2.php';
-	echo "Hola";
 
-	$conn = pg_pconnect("dbname=ltrim($dbopts["path"],'/')");
+	$contr = $_POST['password'];
+	$user = $_POST['usuario'];
 if (!$conn) {
   echo "Ocurrió un error.\n";
   exit;
 }
 
-$result = pg_query($conn, "SELECT usuario, contra FROM id");
+$result = pg_query($dbconn, "SELECT usuario, contra FROM id");
 if (!$result) {
   echo "Ocurrió un error.\n";
   exit;
@@ -17,13 +17,11 @@ if (!$result) {
 
 while ($row = pg_fetch_row($result)) {
 	session_start();
-  echo "Usuario: $row[1]  Perfil: $row[3]";
+  echo "Usuario: $row[1] Contraseña: $row[2] Perfil: $row[3]";
   echo "<br />\n";
 }
 	/*
 
-	$contr = $_POST['password'];
-	$user = $_POST['usuario'];
 
 	$pass = md5($contr);
 

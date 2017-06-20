@@ -43,7 +43,7 @@
     var pass = document.getElementById('password').value;
     var dataen = 'usuario=' + user+ '&password=' + pass; 
   $.ajax({
-    url: "../php/login1.php",
+    url: "../php/login2.php",
     type: "POST",   
     data: dataen  
     }).done(function(echo){
