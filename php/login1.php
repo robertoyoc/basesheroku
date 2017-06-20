@@ -11,7 +11,8 @@
 
 	$result = pg_query($dbconn, $query);
 	if (!$result) {
-	  echo "Usuario no encontrado.<br>";
+		pg_close($dbconn);
+	  die("Usuario no encontrado");
 	}
 
 	while ($row = pg_fetch_row($result)) {
@@ -20,9 +21,10 @@
 			session_start();
 			$_SESSION['perfil'] = $row['perfil'];
 			$_SESSION['usuario'] = $row['usuario'];
+			pg_close($dbconn);
 			die();
 		}else
+			pg_close($dbconn);
 			die('Contraseña incorrecta');
 	}
-	pg_close($dbconn);
 ?>
