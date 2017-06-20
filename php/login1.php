@@ -23,8 +23,9 @@
 			$_SESSION['usuario'] = $row[1];
 			pg_close($dbconn);
 			die();
-		}else
+		}else{
 			pg_close($dbconn);
 			die('Contraseña incorrecta');
+		}
 	}
 ?>

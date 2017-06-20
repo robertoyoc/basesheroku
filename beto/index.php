@@ -3,10 +3,10 @@
 
 	if(isset($_SESSION['perfil'])){
 		if($_SESSION['perfil'] == "admin"){
-			header("Location: public/admin");
+			header("Location: ../public/admin");
 		}
 		else if($_SESSION['perfil']=='instr')
-			header("Location: public/instructor");
+			header("Location: ../public/instructor");
 	}
 
 ?>
