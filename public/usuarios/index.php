@@ -182,7 +182,7 @@
 		var JSONdata = $("#instrregister").serializeArray();
 			
 		$.ajax({
-			url: "../../php/instrregister.php",
+			url: "../../php/instrregister2.php",
 			type: "POST",		
 			data: JSONdata,
 			dataType: 'JSON',
