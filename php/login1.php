@@ -10,10 +10,6 @@
 	$query = "select * FROM id where usuario='$user'";
 
 	$result = pg_query($dbconn, $query);
-	if (!$result) {
-		pg_close($dbconn);
-	  	die("Usuario no encontrado");
-	}
 
 	while ($row = pg_fetch_row($result)) {
 
@@ -29,4 +25,5 @@
 		}
 	}
 	echo "Usuario no encontrado";
+	pg_close();
 ?>
