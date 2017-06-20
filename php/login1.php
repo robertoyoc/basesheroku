@@ -28,4 +28,5 @@
 			die('Contraseña incorrecta');
 		}
 	}
+	echo "Usuario no encontrado";
 ?>
