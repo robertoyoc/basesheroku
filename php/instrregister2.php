@@ -6,16 +6,23 @@
 	$contrasena = $_POST['contrasena'];
 	$last_id;
 
-	$queryusers = "insert into usuarios (usuario, contrasena, perfil) values ('$usuario', '$contrasena', 'instr') returning id into '$last_id';";
+	$queryusers = "insert into usuarios (usuario, contrasena, perfil) values ('$usuario', '$contrasena', 'instr') returning id '$last_id';";
 	$result = pg_query($dbconn, $queryusers);
 
-	while($row = pg_fetch_row($result)){
+
+	$result = array('status' => "Error", 'msg' => $dbconn->lastInsertId());
+	echo json_encode($result);
+
+
+	/*while($row = pg_fetch_row($result)){
 			$insert = "insert into instructor values ('$last_id', '$nombre', '$nomina', '$correo');";
 			$result = pg_query($dbconn, $insert);
-			
+
 
 		}
-		
+		*/
+
+
 
 
 
