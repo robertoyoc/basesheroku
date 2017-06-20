@@ -7,7 +7,7 @@
 
 	//$pass = md5($contr);
 
-	$query = "select * FROM usuarios where usuario='$user'";
+	$query = "select * FROM id where usuario='$user'";
 
 	$result = pg_query($dbconn, $query);
 	if (!$result) {
