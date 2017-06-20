@@ -1,36 +1,29 @@
 <?php
 
 	require 'conexion1.php';
-	echo "Hola";
-	/*
 
 	$contr = $_POST['password'];
 	$user = $_POST['usuario'];
 
-	$pass = md5($contr);
+	//$pass = md5($contr);
 
 	$query = "select * FROM usuarios where usuario='$user'";
 
-	$enlace->real_query($query);
-	$resultado = $enlace->use_result();
-	
-	if($resultado){
-		
-		$fila = $resultado->fetch_assoc();
+	$result = pg_query($dbconn, $query);
+	if (!$result) {
+	  echo "Usuario no encontrado.<br>";
+	  exit;
+	}
 
-		if($pass == $fila['contrasena']){
+	while ($row = pg_fetch_row($result)) {
+
+		if($contr == $row['contra']){
 			session_start();
-			$_SESSION['perfil'] = $fila['perfil'];
-			$_SESSION['usuario'] = $fila['usuario'];
+			$_SESSION['perfil'] = $row['perfil'];
+			$_SESSION['usuario'] = $row['usuario'];
 			die();
 		}else
 			die('Contraseña incorrecta');
 	}
-	else
-	{
-		die('Usuario no encontrado');
-	}
-
-mysqli_close($enlace);
-*/
+	pg_close($dbconn);
 ?>
