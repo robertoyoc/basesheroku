@@ -17,8 +17,8 @@
 <head>
 	<title>Control de Asistencia</title>
 	<meta charset="utf-8">
-	<link rel="shorcout icon" href="public/img/notebook.png">
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
+	<link rel="shorcout icon" href="../public/img/notebook.png">
+	<link rel="stylesheet" type="text/css" href="../public/css/index.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 </head>
@@ -43,7 +43,7 @@
 		var pass = document.getElementById('password').value;
 		var dataen = 'usuario=' + user+ '&password=' + pass; 
 	$.ajax({
-		url: "php/login1.php",
+		url: "../php/login1.php",
 		type: "POST",		
 		data: dataen	
 		}).done(function(echo){
