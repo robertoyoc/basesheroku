@@ -13,7 +13,7 @@
   	$last_id = $row[0];
 	}
 
-	$result = array('status' => "Error", 'msg' => $dbconn->insert_id);
+	$result = array('status' => "Error", 'msg' => $last_id);
 	echo json_encode($result);
 
 
